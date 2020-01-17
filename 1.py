@@ -2,26 +2,35 @@ a = int(input('valor a: '))
 b = int(input('valor b: '))
 op= input('escolha a operação: soma +,sub - ,div / ,mult * : ')
 
-def soma (a,b):
-    c = a + b
-    return c
+class Calculadora:
 
-def sub(a,b):
-    c = a - b
-    return c
+    a = b = None
+    
+    def __init__(self):
+        pass     
 
-def div (a,b):
-    c = a / b
-    return c
+    def soma(self, a, b):
+        c = a + b
+        return c
 
-def mult(a,b):
-    c = a * b
-    return c
+    def sub(self, a, b):
+        c = a - b
+        return c
 
-op1={'*' : mult(a,b),
-     '+' : soma(a,b),
-     '/' : div(a,b),
-     '-' : sub(a,b)
+    def div (self, a, b):
+        c = a / b
+        return c
+
+    def mult(self, a, b):
+        c = a * b
+        return c
+
+c = Calculadora();
+
+op1={'*' : c.mult(a,b),
+     '+' : c.soma(a,b),
+     '/' : c.div(a,b),
+     '-' : c.sub(a,b)
 }
 
 print(op1[op])
